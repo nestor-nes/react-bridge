@@ -1,13 +1,23 @@
 import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { Platform, StyleSheet, Button, Alert } from 'react-native';
 
 import { HelloWave } from '@/components/hello-wave';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Link } from 'expo-router';
+import NavigationModule from '@/modules/wellSiteApps';
 
 export default function HomeScreen() {
+  const handleOpenNativeActivity = async () => {
+    try {
+      await NavigationModule.openActivity();
+    } catch (error) {
+      Alert.alert('Error', 'No se pudo abrir la actividad nativa');
+      console.error(error);
+    }
+  };
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -20,6 +30,16 @@ export default function HomeScreen() {
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
+      </ThemedView>
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Módulo Nativo Android</ThemedText>
+        <ThemedText>
+          Presiona el botón para abrir una actividad nativa de Android desarrollada en Kotlin.
+        </ThemedText>
+        <Button 
+          title="Abrir Actividad Nativa 🚀" 
+          onPress={handleOpenNativeActivity}
+        />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>

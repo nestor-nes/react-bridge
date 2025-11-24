@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sitefinder.wellsitenavigator.usa.maps.navigation" >
+
+    <uses-sdk android:minSdkVersion="24" />
+
+    <application>
+        <activity
+            android:name="com.sitefinder.wellsitenavigator.usa.maps.navigation.MyCustomActivity"
+            android:exported="false"
+            android:label="Mi Actividad Nativa" />
+    </application>
+
+</manifest>

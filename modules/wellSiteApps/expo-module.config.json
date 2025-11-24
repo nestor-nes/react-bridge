@@ -1,0 +1,9 @@
+{
+  "platforms": ["apple", "android", "web"],
+  "apple": {
+    "modules": ["NavigationModule"]
+  },
+  "android": {
+    "modules": ["com.sitefinder.wellsitenavigator.usa.maps.navigation.NavigationModule"]
+  }
+}

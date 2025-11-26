@@ -33,6 +33,10 @@ yarn-error.*
 # local env files
 .env*.local
 
+# Config files temporales/personales
+.zshrc-android-config.sh
+ANDROID_SETUP.md
+
 # typescript
 *.tsbuildinfo
 
@@ -41,3 +45,19 @@ app-example
 # generated native folders
 /ios
 /android
+
+# Pero SÍ versionar el módulo nativo
+!/modules/**/android
+
+# Ignorar archivos de build del módulo
+modules/**/android/build/
+modules/**/android/.gradle/
+modules/**/android/.cxx/
+modules/**/android/local.properties
+
+# Archivos de editor
+*.swp
+*.swo
+*~
+.vscode/settings.json
+.idea/

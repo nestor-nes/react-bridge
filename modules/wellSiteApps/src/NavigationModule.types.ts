@@ -6,6 +6,8 @@ export type OnLoadEventPayload = {
 
 export type NavigationModuleEvents = {
   onChange: (params: ChangeEventPayload) => void;
+  onDivisionProgreso: (params: { paso: number; total: number; porcentaje: number; mensaje: string }) => void;
+  onDivisionCompleta: (params: any) => void;
 };
 
 export type ChangeEventPayload = {

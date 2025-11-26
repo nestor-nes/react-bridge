@@ -3,3 +3,4 @@
 export { default } from './src/NavigationModule';
 export { default as NavigationModuleView } from './src/NavigationModuleView';
 export * from  './src/NavigationModule.types';
+export type { ResultadoOperacion, EventoDivisionProgreso, EventoDivisionCompleta } from './src/NavigationModule';
